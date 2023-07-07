@@ -7,10 +7,9 @@ import 'package:hashtag_cse/utility/viewquestion.dart';
 import 'package:like_button/like_button.dart';
 
 class PersonQuestion extends StatefulWidget {
-  PersonQuestion(this.personProfilePic, this.personName, this.personMessage);
+  PersonQuestion(this.personProfilePic, this.questiondetails);
+  final questiondetails;
   final String personProfilePic;
-  final String personName;
-  final String personMessage;
 
   @override
   State<PersonQuestion> createState() => _PersonQuestionState();
@@ -26,8 +25,8 @@ class _PersonQuestionState extends State<PersonQuestion> {
           Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (context) =>
-                      DirectReply(widget.personName, widget.personProfilePic)));
+                  builder: (context) => DirectReply(
+                      widget.questiondetails, widget.personProfilePic)));
         },
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -60,13 +59,13 @@ class _PersonQuestionState extends State<PersonQuestion> {
                     Padding(
                       padding: EdgeInsets.only(bottom: 3.h),
                       child: Text(
-                        widget.personName,
+                        widget.questiondetails.name,
                         style: TextStyle(
                             fontSize: 15.sp, fontWeight: FontWeight.w700),
                       ),
                     ),
                     Text(
-                      'Asked about: ' + widget.personMessage,
+                      'Asked about: ' + widget.questiondetails.asked,
                       style: TextStyle(
                           fontSize: 15.sp, fontWeight: FontWeight.w400),
                     ),

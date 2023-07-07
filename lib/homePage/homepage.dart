@@ -6,6 +6,9 @@ import 'package:hashtag_cse/ActivePerson/actives.dart';
 import 'package:hashtag_cse/AskQuestions/askQuestion.dart';
 import 'package:hashtag_cse/homePage/homepages/courses.dart';
 import 'package:hashtag_cse/homePage/homepages/feed.dart';
+import 'package:hashtag_cse/models/renamemodel.dart';
+import 'package:hashtag_cse/providers/homeprovider.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -18,6 +21,9 @@ class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
+    QueestionProvider queestionProvider =
+        Provider.of<QueestionProvider>(context, listen: false);
+    queestionProvider.getQuestions();
     return DefaultTabController(
       length: 4,
       child: Scaffold(

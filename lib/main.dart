@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hashtag_cse/SplashScreen/splashScreen.dart';
+import 'package:hashtag_cse/providers/auth.dart';
 import 'package:hashtag_cse/providers/homeprovider.dart';
 import 'package:provider/provider.dart';
 
@@ -21,7 +22,8 @@ class MyApp extends StatelessWidget {
         builder: (context, child) {
           return MultiProvider(
             providers: [
-              ChangeNotifierProvider.value(value: CategoryProvider()),
+              ChangeNotifierProvider.value(value: AuthProvider()),
+              ChangeNotifierProvider.value(value: QueestionProvider()),
             ],
             child: SplashScreen(),
           );

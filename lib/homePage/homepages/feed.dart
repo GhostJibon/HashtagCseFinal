@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hashtag_cse/providers/homeprovider.dart';
+import 'package:hashtag_cse/utility/nodataav.dart';
 import 'package:hashtag_cse/utility/question.dart';
+import 'package:provider/provider.dart';
 
 class Feed extends StatefulWidget {
   const Feed({super.key});
@@ -48,34 +51,47 @@ class _FeedState extends State<Feed> {
                 ],
               ),
             ),
-            Column(
-              children: [
-                PersonQuestion('assets/images/profilepic.png', 'Istiak Jibon',
-                    'Flutter center'),
-                PersonQuestion(
-                    'assets/images/profilepic2.png', 'Shakil', 'Flutter error'),
-                PersonQuestion('assets/images/profilepic3.png', 'Nava',
-                    'Accounts building'),
-                PersonQuestion('assets/images/profilepic.png', 'Istiak Jibon',
-                    'Flutter center'),
-                PersonQuestion(
-                    'assets/images/profilepic2.png', 'Shakil', 'Flutter error'),
-                PersonQuestion('assets/images/profilepic3.png', 'Nava',
-                    'Accounts building'),
-                PersonQuestion('assets/images/profilepic.png', 'Istiak Jibon',
-                    'Flutter center'),
-                PersonQuestion(
-                    'assets/images/profilepic2.png', 'Shakil', 'Flutter error'),
-                PersonQuestion('assets/images/profilepic3.png', 'Nava',
-                    'Accounts building'),
-                PersonQuestion('assets/images/profilepic.png', 'Istiak Jibon',
-                    'Flutter center'),
-                PersonQuestion(
-                    'assets/images/profilepic2.png', 'Shakil', 'Flutter error'),
-                PersonQuestion('assets/images/profilepic3.png', 'Nava',
-                    'Accounts building'),
-              ],
-            )
+            Consumer<QueestionProvider>(builder: (context, modal, child) {
+              return modal.categoryList.length == 0
+                  ? NodataAvailableClass('No IGN Available', 25.0.h)
+                  : ListView.builder(
+                      shrinkWrap: false,
+                      scrollDirection: Axis.horizontal,
+                      itemCount: modal.categoryList.length,
+                      itemBuilder: (context, index) {
+                        final questiondetails = modal.categoryList[index];
+                        return PersonQuestion(
+                            'assets/images/profilepic.png', questiondetails);
+                      });
+            }),
+            // Column(
+            // //   children: [
+            //     PersonQuestion('assets/images/profilepic.png', 'Istiak Jibon',
+            //         'Flutter center'),
+            //     PersonQuestion(
+            //         'assets/images/profilepic2.png', 'Shakil', 'Flutter error'),
+            //     PersonQuestion('assets/images/profilepic3.png', 'Nava',
+            //         'Accounts building'),
+            //     PersonQuestion('assets/images/profilepic.png', 'Istiak Jibon',
+            //         'Flutter center'),
+            //     PersonQuestion(
+            //         'assets/images/profilepic2.png', 'Shakil', 'Flutter error'),
+            //     PersonQuestion('assets/images/profilepic3.png', 'Nava',
+            //         'Accounts building'),
+            //     PersonQuestion('assets/images/profilepic.png', 'Istiak Jibon',
+            //         'Flutter center'),
+            //     PersonQuestion(
+            //         'assets/images/profilepic2.png', 'Shakil', 'Flutter error'),
+            //     PersonQuestion('assets/images/profilepic3.png', 'Nava',
+            //         'Accounts building'),
+            //     PersonQuestion('assets/images/profilepic.png', 'Istiak Jibon',
+            //         'Flutter center'),
+            //     PersonQuestion(
+            //         'assets/images/profilepic2.png', 'Shakil', 'Flutter error'),
+            //     PersonQuestion('assets/images/profilepic3.png', 'Nava',
+            //         'Accounts building'),
+            //   ],
+            // )
           ],
         ),
       )),
