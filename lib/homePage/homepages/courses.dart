@@ -52,6 +52,205 @@ class Courses extends StatelessWidget {
                     CourseName('CSE 112', ' Computer Fundamentals', '3', () {
                       // Get.to(CourseQuestionsView());
                     }),
+                    CourseName('MAT 111', ' Basic Mathematics', '3', () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    CourseName('ENG 113', 'Basic Functional and Spoken', '3',
+                        () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    CourseName('CSE 112', ' Computer Fundamentals', '3', () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    CourseName('MAT 111', ' Basic Mathematics', '3', () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    MainOptions('Level 1 Term 2 (L1-T2))', () {}),
+                    CourseName('CSE 112', ' Computer Fundamentals', '3', () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    CourseName('MAT 111', ' Basic Mathematics', '3', () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    CourseName('ENG 113', 'Basic Functional and Spoken', '3',
+                        () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    CourseName('CSE 112', ' Computer Fundamentals', '3', () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    CourseName('MAT 111', ' Basic Mathematics', '3', () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    MainOptions('Level 1 Term 3 (L1-T3)', () {}),
+                    CourseName('CSE 112', ' Computer Fundamentals', '3', () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    CourseName('MAT 111', ' Basic Mathematics', '3', () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    CourseName('ENG 113', 'Basic Functional and Spoken', '3',
+                        () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    CourseName('CSE 112', ' Computer Fundamentals', '3', () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    CourseName('MAT 111', ' Basic Mathematics', '3', () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    MainOptions('Level 2 Term 1 (L2-T1)', () {}),
+                    CourseName('CSE 112', ' Computer Fundamentals', '3', () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    CourseName('MAT 111', ' Basic Mathematics', '3', () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    CourseName('ENG 113', 'Basic Functional and Spoken', '3',
+                        () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    CourseName('CSE 112', ' Computer Fundamentals', '3', () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    CourseName('MAT 111', ' Basic Mathematics', '3', () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    MainOptions('Level 2 Term 2 (L2-T2)', () {}),
+                    CourseName('CSE 112', ' Computer Fundamentals', '3', () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    CourseName('MAT 111', ' Basic Mathematics', '3', () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    CourseName('ENG 113', 'Basic Functional and Spoken', '3',
+                        () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    CourseName('CSE 112', ' Computer Fundamentals', '3', () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    CourseName('MAT 111', ' Basic Mathematics', '3', () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    MainOptions('Level 2 Term 3 (L2-T3)', () {}),
+                    CourseName('CSE 112', ' Computer Fundamentals', '3', () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    CourseName('MAT 111', ' Basic Mathematics', '3', () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    CourseName('ENG 113', 'Basic Functional and Spoken', '3',
+                        () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    CourseName('CSE 112', ' Computer Fundamentals', '3', () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    CourseName('MAT 111', ' Basic Mathematics', '3', () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    MainOptions('Level 3 Term 1 (L3-T1)', () {}),
+                    CourseName('CSE 112', ' Computer Fundamentals', '3', () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    CourseName('MAT 111', ' Basic Mathematics', '3', () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    CourseName('ENG 113', 'Basic Functional and Spoken', '3',
+                        () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    CourseName('CSE 112', ' Computer Fundamentals', '3', () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    CourseName('MAT 111', ' Basic Mathematics', '3', () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    MainOptions('Level 3 Term 2 (L3-T2)', () {}),
+                    CourseName('CSE 112', ' Computer Fundamentals', '3', () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    CourseName('MAT 111', ' Basic Mathematics', '3', () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    CourseName('ENG 113', 'Basic Functional and Spoken', '3',
+                        () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    CourseName('CSE 112', ' Computer Fundamentals', '3', () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    CourseName('MAT 111', ' Basic Mathematics', '3', () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    MainOptions('Level 3 Term 3 (L3-T3)', () {}),
+                    CourseName('CSE 331', ' Compiler Design', '3', () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    CourseName('CSE 332', ' Compiler Design lab', '3', () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    CourseName('CSE 333', ' Software Engineering', '3', () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    CourseName('CSE 334', 'Pervasive Computing', '1', () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    CourseName('CSE 335', 'Pervasive Computing Lab', '2', () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    MainOptions('Level 4 Term 1 (L4-T1)', () {}),
+                    CourseName('CSE 112', ' Computer Fundamentals', '3', () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    CourseName('MAT 111', ' Basic Mathematics', '3', () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    CourseName('ENG 113', 'Basic Functional and Spoken', '3',
+                        () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    CourseName('CSE 112', ' Computer Fundamentals', '3', () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    CourseName('MAT 111', ' Basic Mathematics', '3', () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    MainOptions('Level 4 Term 2 (L4-T2)', () {}),
+                    CourseName('CSE 112', ' Computer Fundamentals', '3', () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    CourseName('MAT 111', ' Basic Mathematics', '3', () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    CourseName('ENG 113', 'Basic Functional and Spoken', '3',
+                        () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    CourseName('CSE 112', ' Computer Fundamentals', '3', () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    CourseName('MAT 111', ' Basic Mathematics', '3', () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    MainOptions('Level 4 Term 3 (L4-T3)', () {}),
+                    CourseName('CSE 112', ' Computer Fundamentals', '3', () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    CourseName('MAT 111', ' Basic Mathematics', '3', () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    CourseName('ENG 113', 'Basic Functional and Spoken', '3',
+                        () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    CourseName('CSE 112', ' Computer Fundamentals', '3', () {
+                      // Get.to(CourseQuestionsView());
+                    }),
+                    CourseName('MAT 111', ' Basic Mathematics', '3', () {
+                      // Get.to(CourseQuestionsView());
+                    }),
                   ],
                 ),
               ),
