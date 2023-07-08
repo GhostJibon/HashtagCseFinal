@@ -21,9 +21,9 @@ class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
-    QueestionProvider queestionProvider =
-        Provider.of<QueestionProvider>(context, listen: false);
-    queestionProvider.getQuestions();
+    // QueestionProvider queestionProvider =
+    //     Provider.of<QueestionProvider>(context, listen: false);
+    // queestionProvider.getQuestions();
     return DefaultTabController(
       length: 4,
       child: Scaffold(

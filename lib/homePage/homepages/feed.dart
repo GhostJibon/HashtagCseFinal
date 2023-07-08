@@ -51,47 +51,47 @@ class _FeedState extends State<Feed> {
                 ],
               ),
             ),
-            Consumer<QueestionProvider>(builder: (context, modal, child) {
-              return modal.categoryList.length == 0
-                  ? NodataAvailableClass('No IGN Available', 25.0.h)
-                  : ListView.builder(
-                      shrinkWrap: false,
-                      scrollDirection: Axis.horizontal,
-                      itemCount: modal.categoryList.length,
-                      itemBuilder: (context, index) {
-                        final questiondetails = modal.categoryList[index];
-                        return PersonQuestion(
-                            'assets/images/profilepic.png', questiondetails);
-                      });
-            }),
-            // Column(
-            // //   children: [
-            //     PersonQuestion('assets/images/profilepic.png', 'Istiak Jibon',
-            //         'Flutter center'),
-            //     PersonQuestion(
-            //         'assets/images/profilepic2.png', 'Shakil', 'Flutter error'),
-            //     PersonQuestion('assets/images/profilepic3.png', 'Nava',
-            //         'Accounts building'),
-            //     PersonQuestion('assets/images/profilepic.png', 'Istiak Jibon',
-            //         'Flutter center'),
-            //     PersonQuestion(
-            //         'assets/images/profilepic2.png', 'Shakil', 'Flutter error'),
-            //     PersonQuestion('assets/images/profilepic3.png', 'Nava',
-            //         'Accounts building'),
-            //     PersonQuestion('assets/images/profilepic.png', 'Istiak Jibon',
-            //         'Flutter center'),
-            //     PersonQuestion(
-            //         'assets/images/profilepic2.png', 'Shakil', 'Flutter error'),
-            //     PersonQuestion('assets/images/profilepic3.png', 'Nava',
-            //         'Accounts building'),
-            //     PersonQuestion('assets/images/profilepic.png', 'Istiak Jibon',
-            //         'Flutter center'),
-            //     PersonQuestion(
-            //         'assets/images/profilepic2.png', 'Shakil', 'Flutter error'),
-            //     PersonQuestion('assets/images/profilepic3.png', 'Nava',
-            //         'Accounts building'),
-            //   ],
-            // )
+            // Consumer<QueestionProvider>(builder: (context, modal, child) {
+            //   return modal.categoryList.length == 0
+            //       ? NodataAvailableClass('No IGN Available', 25.0.h)
+            //       : ListView.builder(
+            //           shrinkWrap: false,
+            //           scrollDirection: Axis.horizontal,
+            //           itemCount: modal.categoryList.length,
+            //           itemBuilder: (context, index) {
+            //             final questiondetails = modal.categoryList[index];
+            //             return PersonQuestion(
+            //                 'assets/images/profilepic.png', questiondetails);
+            //           });
+            // }),
+            Column(
+              children: [
+                PersonQuestion('assets/images/profilepic.png', 'Istiak Jibon',
+                    'Flutter center'),
+                PersonQuestion(
+                    'assets/images/profilepic2.png', 'Shakil', 'Flutter error'),
+                PersonQuestion('assets/images/profilepic3.png', 'Nava',
+                    'Accounts building'),
+                PersonQuestion('assets/images/profilepic.png', 'Istiak Jibon',
+                    'Flutter center'),
+                PersonQuestion(
+                    'assets/images/profilepic2.png', 'Shakil', 'Flutter error'),
+                PersonQuestion('assets/images/profilepic3.png', 'Nava',
+                    'Accounts building'),
+                PersonQuestion('assets/images/profilepic.png', 'Istiak Jibon',
+                    'Flutter center'),
+                PersonQuestion(
+                    'assets/images/profilepic2.png', 'Shakil', 'Flutter error'),
+                PersonQuestion('assets/images/profilepic3.png', 'Nava',
+                    'Accounts building'),
+                PersonQuestion('assets/images/profilepic.png', 'Istiak Jibon',
+                    'Flutter center'),
+                PersonQuestion(
+                    'assets/images/profilepic2.png', 'Shakil', 'Flutter error'),
+                PersonQuestion('assets/images/profilepic3.png', 'Nava',
+                    'Accounts building'),
+              ],
+            )
           ],
         ),
       )),
