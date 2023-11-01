@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class PeoplesAnswer extends StatelessWidget {
-  PeoplesAnswer(this.commenterProfilePic, this.commenterName, this.commentText,
+class Answer extends StatelessWidget {
+  Answer(this.commenterProfilePic, this.commenterName, this.commentText,
       this.commentTime);
   final String commenterProfilePic;
   final String commenterName;

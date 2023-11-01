@@ -16,17 +16,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-        designSize: const Size(360, 690),
-        minTextAdapt: true,
-        splitScreenMode: true,
-        builder: (context, child) {
-          return MultiProvider(
-            providers: [
-              ChangeNotifierProvider.value(value: AuthProvider()),
-              ChangeNotifierProvider.value(value: QueestionProvider()),
-            ],
-            child: SplashScreen(),
-          );
-        });
+      designSize: const Size(360, 690),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (context, child) => MultiProvider(
+        providers: [
+          ChangeNotifierProvider.value(value: AuthProvider()),
+          ChangeNotifierProvider.value(value: QuestionProvider()),
+        ],
+        child: MaterialApp(
+          home: SplashScreen(),
+        ),
+      ),
+    );
   }
 }

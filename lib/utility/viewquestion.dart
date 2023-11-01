@@ -1,13 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hashtag_cse/models/replymodel.dart';
+import 'package:hashtag_cse/providers/homeprovider.dart';
 import 'package:hashtag_cse/utility/addAnswers.dart';
 import 'package:hashtag_cse/utility/answers.dart';
+import 'package:hashtag_cse/utility/nodataav.dart';
+import 'package:hashtag_cse/utility/shimmer.dart';
 import 'package:like_button/like_button.dart';
+import 'package:provider/provider.dart';
 
-class DirectReply extends StatelessWidget {
-  DirectReply(this.personname, this.profilepic);
+class DirectReply extends StatefulWidget {
+  DirectReply(
+      this.personname, this.profilepic, this.questionId, this.fullQuestion);
   final String personname;
   final String profilepic;
+  final String fullQuestion;
+  final int questionId;
+
+  @override
+  State<DirectReply> createState() => _DirectReplyState();
+}
+
+class _DirectReplyState extends State<DirectReply> {
+  @override
+  void didChangeDependencies() async {
+    super.didChangeDependencies();
+    QuestionProvider questionProvider =
+        Provider.of<QuestionProvider>(context, listen: false);
+    await questionProvider.getReplies(widget.questionId);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,7 +79,7 @@ class DirectReply extends StatelessWidget {
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10.h),
                                 image: DecorationImage(
-                                  image: AssetImage(profilepic),
+                                  image: AssetImage(widget.profilepic),
                                   fit: BoxFit.cover,
                                 ),
                               ),
@@ -68,7 +90,7 @@ class DirectReply extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                personname,
+                                widget.personname,
                                 style: TextStyle(
                                     fontSize: 18.sp,
                                     fontWeight: FontWeight.w500),
@@ -101,10 +123,11 @@ class DirectReply extends StatelessWidget {
               EdgeInsets.only(left: 10.w, right: 10.w, top: 15.h, bottom: 30.h),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
                 child: Text(
-                  'I cant center a text file inside a row in flutter any idea what should i do? ',
+                  widget.fullQuestion,
                   style: TextStyle(fontSize: 20.sp),
                 ),
               ),
@@ -131,11 +154,32 @@ class DirectReply extends StatelessWidget {
                   ],
                 ),
               ),
-              PeoplesAnswer(
-                  'assets/images/profilepic.png',
-                  'Istiak Hossain',
-                  'Try using the Center widget or Use mainaxix alignment center',
-                  '1h'),
+              Consumer<QuestionProvider>(
+                  child: BookCartShimmer(),
+                  builder: (context, modal, child) {
+                    return modal.isLoadingQuesionsInfo
+                        ? child as Widget
+                        : modal.replies.length == 0
+                            ? NodataAvailableClass(
+                                'No Questions Available', 25.0.h)
+                            : SizedBox(
+                                width: double.maxFinite,
+                                child: ListView.builder(
+                                    // physics: NeverScrollableScrollPhysics(),
+                                    shrinkWrap: true,
+                                    scrollDirection: Axis.vertical,
+                                    itemCount: modal.replies.length,
+                                    itemBuilder: (context, index) {
+                                      final Replies repldetails =
+                                          modal.replies[index];
+                                      return Answer(
+                                          'assets/images/profilepic.png',
+                                          repldetails.name,
+                                          repldetails.answer,
+                                          '1h');
+                                    }),
+                              );
+                  }),
               AddAnswer('assets/images/profilepic.png'),
             ],
           ),

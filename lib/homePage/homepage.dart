@@ -6,7 +6,7 @@ import 'package:hashtag_cse/ActivePerson/actives.dart';
 import 'package:hashtag_cse/AskQuestions/askQuestion.dart';
 import 'package:hashtag_cse/homePage/homepages/courses.dart';
 import 'package:hashtag_cse/homePage/homepages/feed.dart';
-import 'package:hashtag_cse/models/renamemodel.dart';
+import 'package:hashtag_cse/models/questionmodel.dart';
 import 'package:hashtag_cse/providers/homeprovider.dart';
 import 'package:provider/provider.dart';
 
