@@ -34,11 +34,11 @@ class _JoinOptionsState extends State<JoinOptions> {
                       fontWeight: FontWeight.w600),
                 ),
               ),
-              MainOptions('User', () {
+              MainOptions('Login', () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => LoginPage()));
               }),
-              MainOptions('Admin', () {
+              MainOptions('Admin Login', () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => LoginPage()));
               }),
@@ -48,7 +48,7 @@ class _JoinOptionsState extends State<JoinOptions> {
               }),
               Padding(
                 padding: EdgeInsets.only(top: 25.h),
-                child: MainOptions('Sign Up', () {
+                child: MainOptions('Create an Account', () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => SignupPage()));
                 }),

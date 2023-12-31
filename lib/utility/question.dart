@@ -5,6 +5,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hashtag_cse/utility/viewquestion.dart';
 import 'package:like_button/like_button.dart';
+import 'dart:math' as math;
 
 class PersonQuestion extends StatefulWidget {
   PersonQuestion(this.personProfilePic, this.name, this.asked, this.questionId,
@@ -34,9 +35,10 @@ class _PersonQuestionState extends State<PersonQuestion> {
               context,
               MaterialPageRoute(
                   builder: (context) => DirectReply(
-                      widget.asked,
+                      widget.name,
                       widget.personProfilePic,
                       widget.questionId,
+                      widget.asked,
                       widget.fullQuestions)));
         },
         child: Row(
@@ -45,23 +47,25 @@ class _PersonQuestionState extends State<PersonQuestion> {
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Container(
-                  height: 55.h,
-                  width: 55.h,
-                  child: Stack(
-                    children: [
-                      Container(
-                        height: 50.h,
-                        width: 50.h,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10.h),
-                          image: DecorationImage(
-                            image: AssetImage(widget.personProfilePic),
-                            fit: BoxFit.fill,
-                          ),
-                        ),
+                Padding(
+                  padding: EdgeInsets.only(right: 5.w),
+                  child: Container(
+                    height: 55.h,
+                    width: 55.h,
+                    decoration: BoxDecoration(
+                        color: Color(
+                                (math.Random().nextDouble() * 0xFFFFFF).toInt())
+                            .withOpacity(1.0),
+                        borderRadius: BorderRadius.circular(10)),
+                    child: Center(
+                      child: Text(
+                        widget.name.substring(0, 1),
+                        style: TextStyle(
+                            fontSize: 20.sp,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.white),
                       ),
-                    ],
+                    ),
                   ),
                 ),
                 Column(
@@ -75,10 +79,24 @@ class _PersonQuestionState extends State<PersonQuestion> {
                             fontSize: 15.sp, fontWeight: FontWeight.w700),
                       ),
                     ),
-                    Text(
-                      'Asked about: ' + widget.asked,
-                      style: TextStyle(
-                          fontSize: 15.sp, fontWeight: FontWeight.w400),
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Container(
+                        child: Row(
+                          children: [
+                            Text(
+                              'Asked about: ',
+                              style: TextStyle(
+                                  fontSize: 15.sp, fontWeight: FontWeight.w600),
+                            ),
+                            Text(
+                              widget.asked,
+                              style: TextStyle(
+                                  fontSize: 12.sp, fontWeight: FontWeight.w400),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                   ],
                 ),

@@ -39,16 +39,16 @@ class _FeedState extends State<Feed> {
               padding: EdgeInsets.only(top: 10.h),
               child: Row(
                 children: [
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.pop(context);
-                    },
-                    child: Icon(
-                      Icons.arrow_back_ios_new,
-                      size: 32.sp,
-                      color: Colors.black,
-                    ),
-                  ),
+                  // GestureDetector(
+                  //   onTap: () {
+                  //     Navigator.pop(context);
+                  //   },
+                  //   child: Icon(
+                  //     Icons.arrow_back_ios_new,
+                  //     size: 32.sp,
+                  //     color: Colors.black,
+                  //   ),
+                  // ),
                   Padding(
                     padding: EdgeInsets.only(left: 20.w),
                     child: Text(

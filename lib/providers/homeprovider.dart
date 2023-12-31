@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:hashtag_cse/models/questionmodel.dart';
 import 'package:hashtag_cse/models/replymodel.dart';
+import 'package:hashtag_cse/utility/constant.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 //import 'dart:developer' as developer;
@@ -20,8 +21,7 @@ class QuestionProvider with ChangeNotifier {
   Future<dynamic> getQuestions() async {
     isLoadingQuesionsInfo = true;
     try {
-      var url =
-          Uri.parse('https://e87e-103-106-239-250.ngrok-free.app/questions');
+      var url = Uri.parse(AppConstants.BASE_URL + '/questions/');
       http.Response response = await http.get(url, headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
@@ -61,8 +61,7 @@ class QuestionProvider with ChangeNotifier {
   Future<dynamic> getReplies(int questionId) async {
     isLoadingAnswerInfo = true;
     try {
-      var url = Uri.parse(
-          'https://e87e-103-106-239-250.ngrok-free.app/questions/${questionId}');
+      var url = Uri.parse(AppConstants.BASE_URL + '/questions/${questionId}');
       http.Response response = await http.get(url, headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',

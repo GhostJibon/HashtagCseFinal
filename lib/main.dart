@@ -25,6 +25,7 @@ class MyApp extends StatelessWidget {
           ChangeNotifierProvider.value(value: QuestionProvider()),
         ],
         child: MaterialApp(
+          debugShowCheckedModeBanner: false,
           home: SplashScreen(),
         ),
       ),

@@ -8,14 +8,21 @@ import 'package:hashtag_cse/utility/nodataav.dart';
 import 'package:hashtag_cse/utility/shimmer.dart';
 import 'package:like_button/like_button.dart';
 import 'package:provider/provider.dart';
+import 'dart:math' as math;
 
 class DirectReply extends StatefulWidget {
   DirectReply(
-      this.personname, this.profilepic, this.questionId, this.fullQuestion);
+    this.personname,
+    this.profilepic,
+    this.questionId,
+    this.asked,
+    this.fullQuestion,
+  );
   final String personname;
   final String profilepic;
   final String fullQuestion;
   final int questionId;
+  final String asked;
 
   @override
   State<DirectReply> createState() => _DirectReplyState();
@@ -77,10 +84,18 @@ class _DirectReplyState extends State<DirectReply> {
                               height: 35.h,
                               width: 35.h,
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10.h),
-                                image: DecorationImage(
-                                  image: AssetImage(widget.profilepic),
-                                  fit: BoxFit.cover,
+                                  color: Color((math.Random().nextDouble() *
+                                              0xFFFFFF)
+                                          .toInt())
+                                      .withOpacity(1.0),
+                                  borderRadius: BorderRadius.circular(10)),
+                              child: Center(
+                                child: Text(
+                                  widget.personname.substring(0, 1),
+                                  style: TextStyle(
+                                      fontSize: 15.sp,
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors.white),
                                 ),
                               ),
                             ),
@@ -96,7 +111,7 @@ class _DirectReplyState extends State<DirectReply> {
                                     fontWeight: FontWeight.w500),
                               ),
                               Text(
-                                'DIU Student Question',
+                                widget.asked,
                                 style: TextStyle(
                                     fontSize: 12.sp,
                                     fontWeight: FontWeight.w400),
@@ -131,29 +146,7 @@ class _DirectReplyState extends State<DirectReply> {
                   style: TextStyle(fontSize: 20.sp),
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.only(top: 5.h, bottom: 20.h),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    LikeButton(
-                      circleColor: CircleColor(
-                          start: Color(0xff00ddff), end: Color(0xff0099cc)),
-                      bubblesColor: BubblesColor(
-                        dotPrimaryColor: Color(0xff33b5e5),
-                        dotSecondaryColor: Color(0xff0099cc),
-                      ),
-                    ),
-                    Icon(
-                      Icons.comment,
-                      color: Colors.grey,
-                    ),
-                    Text(
-                      '23' + ' Comments',
-                    )
-                  ],
-                ),
-              ),
+              SizedBox(height: 15.0),
               Consumer<QuestionProvider>(
                   child: BookCartShimmer(),
                   builder: (context, modal, child) {
@@ -180,7 +173,23 @@ class _DirectReplyState extends State<DirectReply> {
                                     }),
                               );
                   }),
-              AddAnswer('assets/images/profilepic.png'),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  AddAnswer(),
+                  SizedBox(height: 5.0),
+                  ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStatePropertyAll<Color>(Colors.black),
+                    ),
+                    onPressed: () {
+                      // print('Posted: $postQuestion');
+                    },
+                    child: Text('Post'),
+                  ),
+                ],
+              ),
             ],
           ),
         ),

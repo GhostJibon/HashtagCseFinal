@@ -1,26 +1,47 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:hashtag_cse/models/apimodel.dart';
+import 'package:hashtag_cse/utility/constant.dart';
 import 'package:http/http.dart' as http;
 
 class AuthProvider with ChangeNotifier {
-  List<ApiModel> _person = [];
+  bool isloadingsign = false;
 
-  Future getuser() async {
-    var url = Uri.parse('');
-    http.Response response = await http.get(url);
-    List<ApiModel> _personlist = [];
-    Map<String, dynamic> responseData =
-        jsonDecode((utf8.decode(response.bodyBytes)));
-    responseData['results'].forEach((dynamic data) {
-      final ApiModel _person = ApiModel.fromJson(data);
-      print('mmmmmmmmmmmamamamammmamamamamaaamamammam');
-      print(_person.email);
-      _personlist.add(_person);
-    });
-    _person = _personlist;
-
-    notifyListeners();
-  }
+  // Future<void> login(
+  //   String username,
+  //   String password,
+  // ) async {
+  //   try {
+  //     isloadingsign = true;
+  //     final Map<String, dynamic> authdata = {
+  //       "username": username,
+  //       "password": password
+  //     };
+  //     print(authdata);
+  //     var url = Uri.parse(AppConstants.BASE_URL + '/login/');
+  //     http.Response response =
+  //         await http.post(url, body: json.encode(authdata), headers: {
+  //       'Content-Type': 'application/json',
+  //       'Accept': 'application/json',
+  //       // 'Authorization': 'Bearer $token',
+  //     });
+  //     final String res = response.body;
+  //     print(res);
+  //     Map<String, dynamic> mapResponse = JsonDecoder().convert(res);
+  //     print('-------');
+  //     print(mapResponse);
+  //     isloadingsign = false;
+  //     //     if (authentication['success']) {
+  //     //   Navigator.push(
+  //     //       context, MaterialPageRoute(builder: (context) => Dashboard()));
+  //     // } else {
+  //     //   DialogClass.confirmDialog(context, authentication['message']);
+  //     // }
+  //     notifyListeners();
+  //   } catch (c) {
+  //     isloadingsign = false;
+  //     notifyListeners();
+  //     print(c);
+  //   }
+  // }
 }
