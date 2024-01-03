@@ -30,69 +30,40 @@ class _FeedState extends State<Feed> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        
+      ),
       body: SafeArea(
-          child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: EdgeInsets.only(top: 10.h),
-              child: Row(
-                children: [
-                  // GestureDetector(
-                  //   onTap: () {
-                  //     Navigator.pop(context);
-                  //   },
-                  //   child: Icon(
-                  //     Icons.arrow_back_ios_new,
-                  //     size: 32.sp,
-                  //     color: Colors.black,
-                  //   ),
-                  // ),
-                  Padding(
-                    padding: EdgeInsets.only(left: 20.w),
-                    child: Text(
-                      'DIU Question Feed',
-                      style: TextStyle(
-                          color: Color(0xff0B2D5B),
-                          fontSize: 23.sp,
-                          fontWeight: FontWeight.w700),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Consumer<QuestionProvider>(
-                child: BookCartShimmer(),
-                builder: (context, modal, child) {
-                  return modal.isLoadingQuesionsInfo
-                      ? child as Widget
-                      : modal.questions.length == 0
-                          ? NodataAvailableClass(
-                              'No Questions Available', 25.0.h)
-                          : SizedBox(
-                              height: double.maxFinite,
-                              width: double.maxFinite,
-                              child: ListView.builder(
-                                  // physics: NeverScrollableScrollPhysics(),
-                                  shrinkWrap: true,
-                                  scrollDirection: Axis.vertical,
-                                  itemCount: modal.questions.length,
-                                  itemBuilder: (context, index) {
-                                    final Questions questiondetails =
-                                        modal.questions[index];
-                                    return PersonQuestion(
-                                      'assets/images/profilepic.png',
-                                      questiondetails.name,
-                                      questiondetails.title,
-                                      questiondetails.id,
-                                      questiondetails.question,
-                                    );
-                                  }),
-                            );
-                }),
-          ],
-        ),
+          child: Container(
+        height: double.maxFinite,
+        child: Consumer<QuestionProvider>(
+            child: BookCartShimmer(),
+            builder: (context, modal, child) {
+              return modal.isLoadingQuesionsInfo
+                  ? child as Widget
+                  : modal.questions.length == 0
+                      ? NodataAvailableClass('No Questions Available', 25.0.h)
+                      : SizedBox(
+                          height: double.maxFinite,
+                          width: double.maxFinite,
+                          child: ListView.builder(
+                              // physics: NeverScrollableScrollPhysics(),
+                              shrinkWrap: true,
+                              scrollDirection: Axis.vertical,
+                              itemCount: modal.questions.length,
+                              itemBuilder: (context, index) {
+                                final Questions questiondetails =
+                                    modal.questions[index];
+                                return PersonQuestion(
+                                  'assets/images/profilepic.png',
+                                  questiondetails.name,
+                                  questiondetails.title,
+                                  questiondetails.id,
+                                  questiondetails.question,
+                                );
+                              }),
+                        );
+            }),
       )),
     );
   }

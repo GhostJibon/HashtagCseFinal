@@ -10,15 +10,15 @@ class BookCartShimmer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-        itemCount: 3,
-        scrollDirection: Axis.horizontal,
+        itemCount: 12,
+        scrollDirection: Axis.vertical,
         itemBuilder: (context, index) {
           return Shimmer.fromColors(
             baseColor: Colors.black12,
             highlightColor: Colors.black26,
             child: Container(
-              height: 27.0.h,
-              width: 30.0.w,
+              height: 55.0.h,
+              width: 200.0.w,
               margin: const EdgeInsets.all(5),
               decoration: BoxDecoration(
                   color: Colors.grey, borderRadius: BorderRadius.circular(10)),

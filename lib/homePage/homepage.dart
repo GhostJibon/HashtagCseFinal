@@ -72,10 +72,9 @@ class _HomePageState extends State<HomePage>
         return Future.value(false);
       },
       child: DefaultTabController(
-        length: 4,
+        length: 3,
         child: Scaffold(
-          body: TabBarView(
-              children: [Feed(), Courses(), ActivePersons(), AskQuestion()]),
+          body: TabBarView(children: [Feed(), Courses(), AskQuestion()]),
           bottomNavigationBar: TabBar(
             indicatorColor: Color(0xffFF5757),
             unselectedLabelColor: Colors.black,
@@ -97,14 +96,14 @@ class _HomePageState extends State<HomePage>
                     fontSize: 12.sp,
                     fontWeight: FontWeight.w800),
               )),
-              Tab(
-                  icon: Text(
-                'Active',
-                style: TextStyle(
-                    color: Color(0xffFF5757),
-                    fontSize: 12.sp,
-                    fontWeight: FontWeight.w800),
-              )),
+              // Tab(
+              //     icon: Text(
+              //   'Active',
+              //   style: TextStyle(
+              //       color: Color(0xffFF5757),
+              //       fontSize: 12.sp,
+              //       fontWeight: FontWeight.w800),
+              // )),
               Tab(
                   icon: Text(
                 'Ask',

@@ -38,10 +38,10 @@ class _JoinOptionsState extends State<JoinOptions> {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => LoginPage()));
               }),
-              MainOptions('Admin Login', () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => LoginPage()));
-              }),
+              // MainOptions('Admin Login', () {
+              //   Navigator.push(context,
+              //       MaterialPageRoute(builder: (context) => LoginPage()));
+              // }),
               MainOptions('Guest', () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => HomePage()));

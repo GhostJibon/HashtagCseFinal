@@ -102,14 +102,14 @@ class _PersonQuestionState extends State<PersonQuestion> {
                 ),
               ],
             ),
-            LikeButton(
-              circleColor:
-                  CircleColor(start: Color(0xff00ddff), end: Color(0xff0099cc)),
-              bubblesColor: BubblesColor(
-                dotPrimaryColor: Color(0xff33b5e5),
-                dotSecondaryColor: Color(0xff0099cc),
-              ),
-            ),
+            // LikeButton(
+            //   circleColor:
+            //       CircleColor(start: Color(0xff00ddff), end: Color(0xff0099cc)),
+            //   bubblesColor: BubblesColor(
+            //     dotPrimaryColor: Color(0xff33b5e5),
+            //     dotSecondaryColor: Color(0xff0099cc),
+            //   ),
+            // ),
           ],
         ),
       ),
